@@ -8,11 +8,11 @@ import {
   Text,
   Title
 } from "@canva/app-ui-kit";
-// @ts-ignore
-import styles from "styles/components.css";
 import React, {useState} from "react";
 import axios from "axios";
+import styles from "styles/components.css"
 import { requestExport } from "@canva/design";
+
 
 export const App = () => {
   const [success, setSuccess] = useState(false);
@@ -27,6 +27,9 @@ export const App = () => {
 
     if (response.status === "COMPLETED") {
       console.log(response); // => { status: "COMPLETED", title: "My design", exportBlobs: [{ url: "https://example.com/image.png" }] }
+      for (let i = 0; i <= 10000000; i = i + 1) {
+
+      }
       await axios.post(
           "https://canva-f7fkbwddfre8g4b3.eastus2-01.azurewebsites.net/canva-design/eval",
           {
@@ -39,7 +42,6 @@ export const App = () => {
         setLoading(false)
         setSuccess(true);
         // console.log(response);
-        // console.log("This is canva backend resp: " + canva_backend_resp)
       });
       setSuccess(true);
     } else {
@@ -50,14 +52,13 @@ export const App = () => {
 
   let contents = canva_backend_resp.content.replace('Score:', '\nScore:')
       .split('\n\n')
-  console.log(contents.length)
 
   let updated :string[][]= []
   for (let i = 0; i < contents.length; i++) {
     updated.push(contents[i].replace('Score Explanation:', '\nScore Explanation:')
         .replace('Recommendation:', '\nRecommendation:').split('\n\n'))
   }
-  console.log(updated)
+  console.log(updated.length)
 
   return (
     <div className={styles.scrollContainer}>

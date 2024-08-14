@@ -111,7 +111,7 @@ export class Context {
   get backendHost() {
     let backendHost = this.envVars.backendHost;
 
-    // if there's no custom URL provided by the developer, we fallback to our localhost backend
+    // if there's no custom URL provided by the developer, we fall back to our localhost backend
     if (!backendHost || backendHost.trim() === "") {
       backendHost = this.backendUrl;
     }

@@ -11,7 +11,10 @@
       "es2020.promise",
       "es2020.string"
     ],
-    "types": ["node", "jest"],
+    "types": [
+      "node",
+      "jest"
+    ],
     "composite": true,
     "declaration": true,
     "declarationMap": true,
@@ -33,20 +36,16 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "paths": {
-      "assets": ["./assets"],
-      "styles": ["./styles"],
-      "@canva/preview/*": ["./sdk/preview/*"]
+      "styles": [
+        "./styles"
+      ]
     }
   },
   "include": [
     "./src/**/*",
     "./scripts/**/*",
-    "./examples/**/*",
-    "./declarations/declarations.d.ts",
-    "./utils/**/*",
     "./styles/**/*",
-    "./node_modules/@types/**/*",
-    "./sdk/**/*"
+    "./node_modules/@types/**/*"
   ],
   "ts-node": {
     "compilerOptions": {
